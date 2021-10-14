@@ -1,0 +1,22 @@
+server:
+  port: 8500
+ 
+spring:
+  devtools: 
+    livereload:
+      enabled: true
+  freemarker:
+    cache: false
+  thymeleaf:
+    cache: false
+    
+fishing:
+  #urls: "http://localhost:8400/restService/fishing/v1.0/"
+  #urls: "http://192.168.0.105:8400/restService/fishing/v1.0/"
+  urls: "http://112.168.252.12:12020/restService/fishing/v1.0/"
+  getlogin: "getLoginCheck.do"
+  getCurrent: "getCurrentData.do"
+  getHistory: "getVhcleHistory.do"
+  getWeatherPoint : "getWeatherPoint.do"
+  getWeatherTile : "getWeatherTile.png"
+ 

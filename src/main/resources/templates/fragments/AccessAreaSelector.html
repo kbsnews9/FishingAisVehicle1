@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<th:block th:fragment="accessAreaModals">
+		<div id="accessAreaModal" class="modal">
+	             	<div class="modal-dialog" role="document">
+	               <div class="modal-content">
+	                 <div class="modal-header">
+	                   <h5 class="modal-title" id="exampleModalLabel">Select Area</h5>
+	                   <button type="button" id="accessAreaModalClose" class="close" data-dismiss="modal" aria-label="Close">
+	                     <span aria-hidden="true">&times;</span>
+	                   </button>
+	                 </div>
+	                 <div class="modal-body">
+	                   <p id="lastLoginVal" class="h6 text-gray-900 mb-4"></p>
+	                   <div>
+	                  	 <select id="areaSelector" name="areaSelector" class="custom-select" ></select>
+	                   </div>
+	                   
+	                 </div>
+	                 <div class="modal-footer">
+	                   
+	                   <button type="button" class="btn btn-primary" id="sendMain">Enter</button>
+	                 </div>
+	               </div>
+	             </div>
+	           </div>
+	</th:block>
+</body>
+</html>

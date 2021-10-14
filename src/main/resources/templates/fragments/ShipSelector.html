@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<th:block th:fragment="shipSelectorModals">
+		<div id="shipSelectorModal" class="modal">
+	       	<div class="modal-dialog" role="document">
+	         <div class="modal-content">
+	           <div class="modal-header">
+	             <h5 class="modal-title" id="exampleModalLabel">Ship Speed</h5>
+	             <button type="button" id="shipSelectorModalClose" class="close" data-dismiss="modal" aria-label="Close">
+	               <span aria-hidden="true">&times;</span>
+	             </button>
+	           </div>
+	           <div class="modal-body">
+		           <div style="width: 100%;">
+		             <div style="float: left; width: 33%;"><div><input type="checkbox" id="curr_stop_checkbox"> <img alt="" src='/images/icon/STOP.png'>STOP</div></div>
+		           	 <div style="float: left; width: 33%;"><div><input type="checkbox" id="curr_slow_checkbox"> <img alt="" src='/images/icon/SLOW.png'>SLOW</div></div>
+		             <div style="float: left; width: 33%;"><div><input type="checkbox" id="curr_fast_checkbox"> <img alt="" src='/images/icon/FAST.png'>FAST</div></div>
+		             </div>
+	           </div>
+	           
+	         </div>
+	       </div>
+	     </div>
+	</th:block>
+
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+ <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+
+<title>Main</title>
+
+ <!-- Custom fonts for this template-->
+  <link th:href="@{/templates/vendor/fontawesome-free/css/all.min.css}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link th:href="@{/templates/css/sb-admin-2.min.css}" rel="stylesheet">
+  <link th:href="@{/css/GoogleMap.css}" rel="stylesheet">
+   <link th:href="@{/templates/vendor/datatables/dataTables.bootstrap4.min.css}" rel="stylesheet">
+  <!--  <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/> -->
+</head>
+<body>
+	<th:block th:fragment="vhclePopup">
+	
+	<div style="height: 57px;">
+		<div class="vhcle-info-header">
+			
+			<h7 class="modal-title" id="popupId">Area Select</h7>
+			
+			<button type="button" id="vhclePopupModalClose" class="close">
+					<span aria-hidden="true">&times;</span>
+			</button>	
+		</div>
+		 <div class="vhcle-tabs" id="viewTab" > 
+	        
+	        <ul class="nav nav-tabs" style="height: 57px;" >
+			  <li class="nav-item" style="height: 57px;"><a href="#locate" data-toggle="tab" class="nav-link active" style="height: 57px;"><i class="fas fa-map-marker-alt"></i></a></li>
+			  <li class="nav-item" style="height: 57px;"><a href="#detail" data-toggle="tab" class="nav-link" style="height: 57px;"><i class="fas fa-info"></i></a></li>
+			  <li class="nav-item" style="height: 57px;"><a href="#history" data-toggle="tab" class="nav-link" style="height: 57px;" id="vhcleHist"><i class="fas fa-route"></i></a></li>
+
+			</ul>
+	     </div> 
+	</div>
+	<div class="tab-content" style="height: 20vh; margin : 1vh;">
+	  
+	  <div id="locate" class="tab-pane fade in active">
+	  <div id="locate_main" class="locate-main">
+		<nav>
+			
+			<ul>
+				<li class="col_header">Lat / Lon : </li><li id="hist_latLon"></li>				
+			</ul>			
+			<ul>
+				<li class="col_header">Speed : </li><li id="hist_sog"></li>
+			</ul>
+			
+			<ul>
+				<li class="col_header">Heading / COG : </li><li id="hist_headingCog"></li>				
+			</ul>
+										
+			<ul>
+				<li class="col_header">Updated : </li><li id="hist_eventDt"></li>							
+			</ul>
+			<ul>
+				<li class="col_header">From now : </li><li id="hist_fromNow"></li>							
+			</ul>			
+		</nav>
+		</div>
+		
+		
+		
+		
+		
+	  </div>
+	  <div id="detail" class="tab-pane fade">
+	    <div id="info_sub1" class="info-sub1">
+		<nav>
+			<ul>
+				<li class="col_header">MMSI : </li><li id="hist_mmsi"></li>				
+			</ul>
+			<ul>
+				<li class="col_header">IMO Number : </li><li id="hist_imo"></li>
+			</ul>
+			<ul>
+				<li class="col_header">Call Sign : </li><li id="hist_callSign"></li>				
+			</ul>
+			<ul>
+				<li class="col_header">Updated : </li><li id="hist_eventInfoDt"></li>							
+			</ul>
+			</nav>
+		</div>
+	  </div>
+	  <div id="history" class="tab-pane fade">
+	    <div id="info_sub2" class="info-sub2">
+		<nav>
+			<ul>
+				<li class="col_header">Start Date : </li><li id="hist_startDt"></li>
+				<!-- <li style="width: 24px; height: 24px;"><a href="#" id="hist_startDate_a" style="width: 24px; height: 24px;"><img id="hist_startDt_icon" src=""></a></li> -->			
+			</ul>
+			<ul>
+				<li class="col_header">End Date : </li><li id="hist_endDt"></li>
+			</ul>
+			<!-- <ul>
+				<li class="col_header">Data Count : </li><li id="hist_dataCount"></li>
+			</ul> -->
+			<ul>
+				<li class="col_header">Marker Hide : </li>
+				<li id="hist_marker" >
+				<button type="button" class="btn btn-danger" id="hist_stop_btn">STOP</button>
+				<button type="button" class="btn btn-warning" id="hist_slow_btn">SLOW</button>
+				<button type="button" class="btn btn-success" id="hist_fast_btn">FAST</button>
+				</li>
+			</ul>
+			<ul>
+				<li class="col_header">Timestamp : </li>
+				<li>
+				<a href="#" class="btn btn-secondary"  id="labelOnOff_btn" >
+                 	<i class="fas fa-toggle-off"></i>
+                 </a>
+				
+				</li>
+				
+			</ul>
+			
+			<ul>
+				<li class="col_header" >Otherships : </li>
+				<li >
+				<a href="#" class="btn btn-secondary" style="margin-top: 3px;"  id="currentMarkerOnOff_btn" >
+                 	<i class="fas fa-toggle-off"></i>
+                 </a>
+				
+				</li>
+				
+			</ul>
+			
+			</nav>
+		</div>
+	  </div>
+	</div>
+	
+	
+	
+
+
+	</th:block>
+</body>
+</html>

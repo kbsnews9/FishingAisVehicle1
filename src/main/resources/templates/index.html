@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+ <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+
+<title>KOREA ORBCOMM Fishing Vessel Tracker</title>
+
+ <!-- Custom fonts for this template-->
+  <link th:href="@{/templates/vendor/fontawesome-free/css/all.min.css}" rel="stylesheet">
+  <link th:href="@{https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i}" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link th:href="@{/templates/css/sb-admin-2.min.css}" rel="stylesheet">
+  <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+  
+  
+  
+</head>
+<body class="bg-gradient-primary">
+
+  <div class="container">
+
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+
+      <div class="col-xl-10 col-lg-12 col-md-9">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+          <div class="card-body p-0">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+              <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+              <div class="col-lg-6">
+                <div class="p-5">
+                  <div class="text-center">
+                    <h1 class="h4 text-gray-900 mb-4">KOREA ORBCOMM<br/>Fishing Vessel Tracker</h1>
+                  </div>
+                  <form class="user" id="mainForm" name="mainForm" action="/index.do" method="post">
+	                    <div class="form-group">
+	                      <input type="text" class="form-control form-control-user" id="userId" name="userId" placeholder="Enter ID" value="">
+	                    </div>
+	                    <div class="form-group">
+	                      <input type="password" class="form-control form-control-user" id="userPwd" name="userPwd" placeholder="Password" value="">
+	                    </div>
+                    </form>
+                    <a href="#" id="loginBtn" class="btn btn-primary btn-user btn-block">
+                      Login
+                    </a>
+                    
+                    
+                         
+                       <div id="accessAreaSelectorPopup" th:insert="~{fragments/AccessAreaSelector::accessAreaModals}"></div>
+          
+                                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+ </div>
+  
+ 
+  
+  
+  <form action="#" id="accessInfo" th:object="${accessInfo}">
+  	<input type="hidden" hidden="true" id="mainUrl" th:field="*{urls}">
+  	<input type="hidden" hidden="true" id="getlogin" th:field="*{getlogin}">
+  	<input type="hidden" hidden="true" id="getCurrent" th:field="*{getCurrent}">
+  	<input type="hidden" hidden="true" id="getHistory" th:field="*{getHistory}">
+  	<input type="hidden" hidden="true" id="getWeatherPoint" th:field="*{getWeatherPoint}">
+  	<input type="hidden" hidden="true" id="getWeatherTile" th:field="*{getWeatherTile}">
+  </form>
+  
+  
+
+  <!-- Bootstrap core JavaScript-->
+  <script th:src="@{/templates/vendor/jquery/jquery.min.js}"></script>
+  <script th:src="@{/templates/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+  <!-- 
+  <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+  <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+  <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+ -->
+  <!-- Core plugin JavaScript-->
+  <script th:src="@{/templates/vendor/jquery-easing/jquery.easing.min.js}"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script th:src="@{/templates/js/sb-admin-2.min.js}"></script>
+  <script th:src="@{https://unpkg.com/axios/dist/axios.min.js}"></script>
+   <!-- <script th:src="@{/js/Common.js}"></script> -->
+  <!-- <script th:src="@{/js/AccessArea.js}"></script> -->
+  <script th:src="@{/js/Login.js}"></script>
+  
+
+
+  
+
+</body>
+
+
+
+
+</html>
